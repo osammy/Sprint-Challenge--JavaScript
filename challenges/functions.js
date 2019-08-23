@@ -6,6 +6,9 @@
   * The last parameter accepts a callback 
   * In the body of the function return the callback with the two parameters that you created
 */
+  function consume(arg1,arg2,cb) {
+    return cb(arg1,arg2);
+  }
 
 
 /* Step 2: Create several functions to callback with consume();
@@ -13,7 +16,17 @@
   * Create a function named multiply that returns the product of two numbers 
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
+function add(num1,num2) {
+  return num1 + num2;
+}
 
+function multiply(num1,num2) {
+  return num1 * num2;
+}
+
+function greeting(first_name,last_name) {
+  return `Hello ${first_name} ${last_name}, nice to meet you!`;
+}
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 // consume(2,2,add); // 4
@@ -26,7 +39,10 @@
 // Explain in your own words why `nestedfunction()` can access the variable `internal`.
 
 // Explanation: 
-
+ /*
+  since nestedFunction is declared inside of the myFunction it has access to the variables in that scope,
+  even when myFunction exits, its variables are still accessible to the function declared within that scope.
+  */
 
 const external = "I'm outside the function";
 
